@@ -1,2 +1,2 @@
-# mini-games
-A Minecraft mod that adds mini-games
+# tmod
+A minecraft mod
