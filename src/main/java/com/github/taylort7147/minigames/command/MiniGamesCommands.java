@@ -24,11 +24,14 @@ public class MiniGamesCommands
     {
         registerCommand(dispatcher, new StartGameCommand("startgame"), PLAYER_COMMANDS_NODE);
         registerCommand(dispatcher, new EndGameCommand("endgame"), PLAYER_COMMANDS_NODE);
+        registerCommand(dispatcher, new AreaSelectCommand("areaselect"), PLAYER_COMMANDS_NODE);
+        registerCommand(dispatcher, new CurrentAreaCommand("currentarea"), PLAYER_COMMANDS_NODE);
     }
 
     private static void registerCommand(CommandDispatcher<CommandSource> dispatcher, Command command, String node)
     {
-        MiniGames.LOGGER.debug("Registering command \"" + command.getName() + "\" of type " + command.getClass().getName());
+        MiniGames.LOGGER
+                .debug("Registering command \"" + command.getName() + "\" of type " + command.getClass().getName());
         dispatcher.register(Commands.literal(command.getName()).requires(source -> {
             try
             {

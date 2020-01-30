@@ -2,6 +2,7 @@ package com.github.taylort7147.minigames.event;
 
 import com.github.taylort7147.minigames.MiniGames;
 
+import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -20,5 +21,11 @@ public final class PlayerInteractEventHandler
     public static void onPlayerUse(PlayerInteractEvent.RightClickItem event)
     {
         MiniGames.LOGGER.debug("onPlayerUse");
+    }
+    
+    @SubscribeEvent
+    public static void onPlayerMoved(LivingUpdateEvent event)
+    {
+        
     }
 }
