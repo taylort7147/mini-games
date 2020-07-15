@@ -2,7 +2,7 @@ package com.github.taylort7147.minigames;
 
 import javax.annotation.Nonnull;
 
-import com.github.taylort7147.minigames.command.MiniGamesCommands;
+import com.github.taylort7147.minigames.capability.CapabilityAreaManager;
 import com.github.taylort7147.minigames.init.ModItemGroup;
 import com.google.common.base.Preconditions;
 
@@ -16,7 +16,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.IForgeRegistryEntry;
@@ -121,5 +120,8 @@ public final class ModEventSubscriber
     public static void onCommonSetup(FMLCommonSetupEvent event)
     {
         MiniGames.LOGGER.debug("onCommonSetup");
+        
+        MiniGames.LOGGER.info("Registering capabilities");
+        CapabilityAreaManager.register();
     }
 }

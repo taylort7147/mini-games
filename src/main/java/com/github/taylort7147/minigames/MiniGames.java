@@ -10,4 +10,6 @@ public class MiniGames
 {
     public static final String MODID = "minigames";
     public static final Logger LOGGER = LogManager.getLogger(MODID);
+
+
 }
